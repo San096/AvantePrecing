@@ -1,5 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "builds": [
+    {
+      "src": "Avante/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "avante/dist" }
+    }
   ]
 }
