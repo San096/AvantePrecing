@@ -22,7 +22,7 @@ export default function NewPricing() {
   const [form, setForm] = useState({
     clientId: clientIdFromUrl || "",
     problem_description: "",
-    equipment_name: "",
+    serveco_prestado: "",
     brand: "",
     model: "",
     devs: 1,
@@ -156,7 +156,7 @@ export default function NewPricing() {
           <div className="flex gap-2">
             <input
               type="text"
-              placeholder="Equipamento"
+              placeholder="Serviço Prestado"
               value={form.equipment_name}
               onChange={(e) =>
                 setForm({ ...form, equipment_name: e.target.value })
