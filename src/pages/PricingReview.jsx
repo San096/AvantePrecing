@@ -90,7 +90,7 @@ export default function PricingReview() {
     pdf.text("Orçamento Detalhado", 105, y, { align: "center" });
     y += 20;
 
-    // 1️⃣ Consultoria
+    // Consultoria
     y = drawSectionTitle(pdf, "Consultoria", y);
     pdf.setFontSize(10);
     pdf.text(`Nome: ${companyData.name}`, 10, y); y += 6;
@@ -99,25 +99,14 @@ export default function PricingReview() {
     pdf.text(`Telefone: ${companyData.phone}`, 10, y); y += 6;
     pdf.text(`Email: ${companyData.email}`, 10, y); y += 10;
 
-    // 2️⃣ Cliente
+    //  Cliente
     y = drawSectionTitle(pdf, "Cliente", y);
     pdf.text(`Nome: ${client?.name || ""}`, 10, y); y += 6;
     pdf.text(`Email: ${client?.email || ""}`, 10, y); y += 6;
     pdf.text(`Telefone: ${client?.phone || ""}`, 10, y); y += 6;
     pdf.text(`Cidade/Estado: ${client?.city_state || ""}`, 10, y); y += 10;
-
-    // 3️⃣ Precificação
-    y = drawSectionTitle(pdf, "Precificação", y);
-    pdf.text(`Código: ${pricing?.codigo}`, 10, y); y += 6;
-    pdf.text(`Descrição: ${pricing?.problem_description}`, 10, y); y += 6;
-    pdf.text(`Devs: ${pricing?.devs}`, 10, y); y += 6;
-    pdf.text(`Dias úteis: ${pricing?.business_days}`, 10, y); y += 6;
-    pdf.text(`Horas/dia: ${pricing?.hours_per_day}`, 10, y); y += 6;
-    pdf.text(`Total de horas: ${pricing?.total_hours}`, 10, y); y += 6;
-    pdf.text(`Valor hora: R$ ${pricing?.hourly_rate}`, 10, y); y += 6;
-    pdf.text(`Custo total: R$ ${pricing?.total_cost}`, 10, y); y += 10;
-
-    // 4️⃣ Procedimentos
+   
+    // Procedimentos
     y = drawSectionTitle(pdf, "Procedimentos & Cronograma", y);
     if (pricing?.procedures?.length > 0) {
       pricing.procedures.forEach((p, index) => {
@@ -129,7 +118,19 @@ export default function PricingReview() {
       y += 6;
     }
 
-    // 5️⃣ Formalização
+    //  Precificação
+    y = drawSectionTitle(pdf, "Precificação", y);
+    pdf.text(`Código: ${pricing?.codigo}`, 10, y); y += 6;
+    pdf.text(`Descrição: ${pricing?.problem_description}`, 10, y); y += 6;
+    pdf.text(`Devs: ${pricing?.devs}`, 10, y); y += 6;
+    pdf.text(`Dias úteis: ${pricing?.business_days}`, 10, y); y += 6;
+    pdf.text(`Horas/dia: ${pricing?.hours_per_day}`, 10, y); y += 6;
+    pdf.text(`Total de horas: ${pricing?.total_hours}`, 10, y); y += 6;
+    pdf.text(`Valor hora: R$ ${pricing?.hourly_rate}`, 10, y); y += 6;
+    pdf.text(`Custo total: R$ ${pricing?.total_cost}`, 10, y); y += 10;
+
+    
+    // Formalização
     y = drawSectionTitle(pdf, "Formalização", y);
     pdf.setFontSize(10);
     pdf.text(

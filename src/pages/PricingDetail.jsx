@@ -98,19 +98,6 @@ export default function PricingDetail() {
     pdf.text(`Cidade/Estado: ${client?.city_state || "-"}`, 10, y);
     y += 10;
 
-    // Precificação
-    pdf.setFontSize(12);
-    pdf.text("Informações da Precificação:", 10, y); y += 6;
-    pdf.setFontSize(10);
-    pdf.text(`Código: ${pricing?.codigo}`, 10, y); y += 6;
-    pdf.text(`Descrição: ${pricing?.problem_description}`, 10, y); y += 6;
-    pdf.text(`Devs: ${pricing?.devs}`, 10, y); y += 6;
-    pdf.text(`Dias úteis: ${pricing?.business_days}`, 10, y); y += 6;
-    pdf.text(`Horas/dia: ${pricing?.hours_per_day}`, 10, y); y += 6;
-    pdf.text(`Total de horas: ${pricing?.total_hours}`, 10, y); y += 6;
-    pdf.text(`Valor hora: R$ ${pricing?.hourly_rate}`, 10, y); y += 6;
-    pdf.text(`Custo total: R$ ${pricing?.total_cost}`, 10, y); y += 10;
-
     // Procedimentos
     pdf.setFontSize(12);
     pdf.text("Procedimentos & Cronograma:", 10, y); y += 6;
@@ -124,6 +111,19 @@ export default function PricingDetail() {
       pdf.text("Nenhum procedimento informado", 10, y);
       y += 6;
     }
+
+    // Precificação
+    pdf.setFontSize(12);
+    pdf.text("Informações da Precificação:", 10, y); y += 6;
+    pdf.setFontSize(10);
+    pdf.text(`Código: ${pricing?.codigo}`, 10, y); y += 6;
+    pdf.text(`Descrição: ${pricing?.problem_description}`, 10, y); y += 6;
+    pdf.text(`Devs: ${pricing?.devs}`, 10, y); y += 6;
+    pdf.text(`Dias úteis: ${pricing?.business_days}`, 10, y); y += 6;
+    pdf.text(`Horas/dia: ${pricing?.hours_per_day}`, 10, y); y += 6;
+    pdf.text(`Total de horas: ${pricing?.total_hours}`, 10, y); y += 6;
+    pdf.text(`Valor hora: R$ ${pricing?.hourly_rate}`, 10, y); y += 6;
+    pdf.text(`Custo total: R$ ${pricing?.total_cost}`, 10, y); y += 10;
 
     // Assinatura
     y += 20;
